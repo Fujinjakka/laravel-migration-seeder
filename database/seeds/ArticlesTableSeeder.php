@@ -15,7 +15,15 @@ class ArticlesTableSeeder extends Seeder
     {
         for ($i=0; $i < 20; $i++) { 
             $articles = new Article();
-            $articles
+
+            $articles->title = $faker->sentence(2);
+            $articles->subtitle = $faker->text(20);
+            $articles->author = $faker->name();
+            $articles->text = $faker->text(150);
+            $articles->pubblication_date = $faker->datetime();
+
+
+            $articles->save();
 
         }
     }
